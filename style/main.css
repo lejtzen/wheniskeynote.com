@@ -33,6 +33,7 @@ html[data-theme="light"] {
   --blue: rgb(0, 122, 255);
   --purple: rgb(191, 90, 242);
   --red: rgb(255, 69, 58);
+  --gradient: 72deg, rgba(49,240,194,1) 5%, rgba(227,100,20,1) 52%, rgba(212,195,105,1) 85%, rgba(148,233,88,1) 100%;
   --gray: rgb(255, 255, 255);
   --primary: rgba(0, 0, 0, .87);
   --secondary: rgba(0, 0, 0, .65);
@@ -208,6 +209,10 @@ h3 a {
     color: white;
     background: black;
     mix-blend-mode: multiply;
+  }
+
+  html[data-theme="light"] .gradient {
+    filter: invert(1);
   }
 }
 
