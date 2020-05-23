@@ -1,176 +1,239 @@
-@font-face {
-  font-family: 'Myriad Set Pro';
-  font-style: normal;
-  font-weight: 100;
-  src: url('fonts/MyriadSetPro-Thin.woff') format('woff'), url('fonts/MyriadSetPro-Thin.ttf') format('truetype');
-}
-
-html,
-body,
-button,
-input,
-select,
-textarea {
-  color: #FFF;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  width: 100%;
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-  display: table;
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --blue: rgb(10, 132, 255);
+  --purple: rgb(175, 82, 222);
+  --red: rgb(255, 59, 48);
+  --gradient: 72deg, rgba(206,15,61,1) 5%, rgba(28,155,235,1) 52%, rgba(43,60,150,1) 85%, rgba(107,22,167,1) 100%;
+  --gray: rgb(0, 0, 0);
+  --primary: rgba(255, 255, 255, 1);
+  --secondary: rgba(255, 255, 255, .7);
+  --hint: rgba(255, 255, 255, .5);
+  --separator: rgba(255, 255, 255, .12);
+  --shade: rgba(255, 255, 255, .03);
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--gray);
+}
+
+html[data-theme="light"] {
+  --blue: rgb(0, 122, 255);
+  --purple: rgb(191, 90, 242);
+  --red: rgb(255, 69, 58);
+  --gray: rgb(255, 255, 255);
+  --primary: rgba(0, 0, 0, .87);
+  --secondary: rgba(0, 0, 0, .65);
+  --hint: rgba(0, 0, 0, .38);
+  --separator: rgba(0, 0, 0, .12);
+  --shade: rgba(0, 0, 0, .03);
+}
+
+@supports (font-variation-settings:normal) {
+  html {
+    -webkit-font-feature-settings: "case" 1;
+    font-feature-settings: "case" 1;
+  }
 }
 
 body {
-  font-family: 'Myriad Set Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 100;
-  font-size: 15pt;
-  line-height: 18pt;
-  text-align: center;
-  background-color: #000;
-  background-image: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          color-stop(0.25, #060709),
-          color-stop(0.5, #212328),
-          color-stop(0.75, #424448),
-          color-stop(1, #686A6D)
-  );
-  background-image: -o-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
-  background-image: -moz-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
-  background-image: -webkit-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
-  background-image: -ms-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
-  background-image: linear-gradient(to bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
-  display: table-cell;
-  vertical-align: middle;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.374px;
+  color: var(--primary);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+main,
+footer {
+  padding: 16px 0;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  display: block;
+  animation: fadeInUp 1000ms ease-out 1000ms;
+  animation-fill-mode: backwards;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 16.0004px;
+  letter-spacing: -0.12px;
+  margin: 0;
+  color: var(--hint);
+}
+
+footer a {
+  color: var(--secondary);
+}
+
+a,
+button {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+button {
+  opacity: 0.7;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.stagger-wrapper{
+  display: inline-block;
+  overflow: hidden;
+}
+
+.stagger{
+  display: inline-block;
+  animation: slideUp 400ms ease-out;
+  animation-fill-mode: backwards;
 }
 
 h1 {
-  font-size: 15pt;
-  line-height: 18pt;
-  font-weight: 100;
-  margin-top: 10px;
-  margin-bottom: 0px;
-}
-
-#localtime {
-  font-size: 45pt;
-  line-height: 48pt;
-  font-weight: 100;
-  margin-bottom: 10px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: .009em;
+  line-height: 1.21053;
+  margin: 0;
+  animation: fadeInUp 500ms ease-out;
+  animation-fill-mode: backwards;
 }
 
 h2 {
-  font-size: 45pt;
-  line-height: 48pt;
-  font-weight: 100;
-  margin-top: 5px;
-  margin-bottom: 16px;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: .004em;
+  line-height: 1.05;
+  margin: 60px 0 0 0;
 }
 
 h3 {
-  font-size: 15pt;
-  line-height: 18pt;
-  font-weight: 100;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  font-size: 21px;
+  line-height: 1.19048;
+  font-weight: 600;
+  letter-spacing: .011em;
+  margin: 30px 0 0 0;
+  animation: fadeInUp 300ms ease-out 800ms;
+  animation-fill-mode: backwards;
 }
 
-h4 {
-  font-size: 15pt;
-  line-height: 18pt;
-  font-weight: 100;
-  margin-top: 26px;
-  margin-bottom: 10px;
+h3 a {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
-h5 {
-  font-size: 15pt;
-  font-weight: 100;
-  margin-top: 0px;
-  margin-bottom: 10px;
+.gradient-inner {
+  color: var(--blue);
 }
 
-#dark {
-  color: #B3B3B3;
+.gradient-inner a {
+  color: inherit;
 }
 
-#error_message {
-  border-left: 5px solid #bb3;
-  border-right: 5px solid #bb3;
-  color: #770;
+@supports (mix-blend-mode: multiply) {
+  .gradient {
+    background: var(--blue);
+    background: -webkit-linear-gradient(var(--gradient));
+    background: linear-gradient(var(--gradient));
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .gradient-inner {
+    color: white;
+    background: black;
+    mix-blend-mode: multiply;
+  }
 }
 
-a:link, a:visited {
-  color: #FFF;
-  text-decoration: none;
+#day,
+#hours,
+#minutes,
+#seconds {
+  font-variant-numeric: tabular-nums;
 }
 
-a:hover {
-  color: #dbdbdb;
-  text-decoration: none;
-}
+@media (min-width: 576px) {
+  h1 {
+    font-size: 24px;
+    letter-spacing: 0.196px;
+    line-height: 1.5em;
+  }
 
-a:active {
-  color: #dbdbdb;
-  text-decoration: none;
-}
+  h2 {
+    font-size: 96px;
+    letter-spacing: -1.44px;
+    line-height: 1.035em;
+  }
 
-.footer {
-  position: fixed;
-  margin-top: 0px;
-  bottom: 0px;
-  font-size: 8pt;
-  line-height: 9pt;
-  text-align: center;
-  color: #cccccc;
-  width: 100%;
-  margin-top: 100px;
-  margin-bottom: 10px;
-}
-
-.ics {
-  margin-left: 10px;
-  vertical-align: top;
-  width: 25px;
-}
-
-img {
-  border: 0px;
-}
-
-.countdown {
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.counteverest .ce-days,
-.counteverest .ce-hours,
-.counteverest .ce-minutes,
-.counteverest .ce-seconds {
-  font-size: 55pt;
-}
-
-.counteverest .col {
-  display: inline-block;
-}
-
-.counteverest .ce-days-label,
-.counteverest .ce-hours-label,
-.counteverest .ce-minutes-label,
-.counteverest .ce-seconds-label {
-  display: block;
-  margin-top: 20px;
-}
-
-.counteverest .col {
-  padding-bottom: 20px;
-  margin: 0 5px;
-  width: 105px;
-  text-align: center;
+  h3 {
+    font-size: 48px;
+    line-height: 1.08349;
+    letter-spacing: -.003em;
+  }
 }

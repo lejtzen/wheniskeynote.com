@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <meta name="keywords" content="apple, event, keynote, next, address">
   <title>When is the next Apple keynote?</title>
@@ -28,26 +29,31 @@
   <link rel="apple-touch-icon" sizes="176x175" href="images/keynote_icon176x176.png">
 
   <link rel="preload" as="style" href="style/main.css">
+  <link rel="preload" as="script" href="js/theme.js">
   <link rel="preload" as="script" href="js/addNewEvent.js">
   <link rel="preload" as="script" href="js/main.js">
 
   <link rel="stylesheet" href="style/main.css">
+  <script src="js/theme.js" defer></script>
   <script src="js/addNewEvent.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
-<body class="counteverest">
-  <noscript>Please enable JavaScript in your browser and reload this page.</noscript>
+<body>
   <div class="container">
-    <div id="response">
-      <h1 id="dark">The next Apple keynote address / product event is:</h1>
-    </div>
-    <div class="footer">
+    <main>
+      <div id="response">
+        <noscript>Please enable JavaScript in your browser and reload this page.</noscript>
+        <h1>The next Apple keynote address/product event is:</h1>
+      </div>
+    </main>
+    <footer>
       <p>
-        Help us keep this website up to date. Add the event by making a PR request on <a href="https://github.com/hartator/wheniskeynote.com">GitHub</a><br>
-        Brought by <a href="https://serpapi.com">Serp Api</a>: <a href="https://serpapi.com">Google Search API</a><br>
-        &copy; <span id="year"></span> wheniskeynote.com
+        Help us keep this website up to date. Add the event by making a PR request on <a href="https://github.com/hartator/wheniskeynote.com" title="wheniskeynote at GitHub">GitHub</a>.
+        Brought by <a href="https://serpapi.com" title="Serp Api">Serp Api</a>: <a href="https://serpapi.com" title="Google Search API">Google Search API</a>.
+        &copy; <span id="year"></span> wheniskeynote.com.
+        <button type="button" onclick="window.theme.toggle()">Toggle appearance</button>.
       </p>
-    </div>
+    </footer>
   </div>
 </body>
 </html>
