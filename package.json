@@ -4,7 +4,7 @@
   "description": "Discover when Apple's next keynote / product event is happening!",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "develop": "parcel ./src/index.html",
+    "develop": "parcel serve ./src/index.html",
     "build": "parcel build ./src/index.html"
   },
   "repository": {
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/lejtzen/wheniskeynote.com#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel": "^2.0.0-beta.1"
   }
 }
