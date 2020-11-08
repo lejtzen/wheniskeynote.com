@@ -52,15 +52,9 @@
       href="images/keynote_icon176x176.png"
     />
 
-    <link rel="preload" as="style" href="style/main.css" />
-    <link rel="preload" as="script" href="js/theme.js" />
-    <link rel="preload" as="script" href="js/addNewEvent.js" />
-    <link rel="preload" as="script" href="js/main.js" />
-
-    <link rel="stylesheet" href="style/main.css" />
-    <script src="js/theme.js" defer></script>
-    <script src="js/addNewEvent.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <style>
+      @import './main.css';
+    </style>
   </head>
   <body>
     <div class="container">
@@ -91,5 +85,9 @@
         </p>
       </footer>
     </div>
+
+    <script>
+      require('./main.js')
+    </script>
   </body>
 </html>
