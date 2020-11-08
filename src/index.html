@@ -52,11 +52,9 @@
       href="images/keynote_icon176x176.png"
     />
 
-    <link rel="preload" as="style" href="main.css" />
-    <link rel="preload" as="script" href="main.js" />
-
-    <link rel="stylesheet" href="main.css" />
-    <script src="main.js" defer></script>
+    <style>
+      @import './main.css';
+    </style>
   </head>
   <body>
     <div class="container">
@@ -87,5 +85,9 @@
         </p>
       </footer>
     </div>
+
+    <script>
+      require('./main.js')
+    </script>
   </body>
 </html>
