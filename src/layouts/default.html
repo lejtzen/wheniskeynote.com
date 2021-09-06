@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no"
+    />
+    <block name="meta"></block>
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="~/src/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touchs-icon" href="~/src/images/keynote_icon57x57.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="~/src/images/keynote_icon76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="~/src/images/keynote_icon120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="176x175"
+      href="~/src/images/keynote_icon176x176.png"
+    />
+    <style>
+      @import '~/src/styles/critical.scss';
+    </style>
+    <script type="module">
+      require('~/src/scripts/critical.js')
+    </script>
+    <link rel="stylesheet" href="~/src/styles/style.css" type="text/css" />
+    <link rel="preload" href="~/src/scripts/index.js" as="script" />
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <block name="content"></block>
+    </main>
+
+    <footer>
+      <p>
+        Help us keep this website up to date. Add the event by making a PR on
+        <a
+          href="https://github.com/lejtzen/wheniskeynote.com"
+          title="Lejtzéns wheniskeynote at GitHub"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >. Brought by
+        <a
+          href="https://serpapi.com"
+          title="Serp Api"
+          rel="nofollow noopener noreferrer"
+          >Serp Api</a
+        >:
+        <a
+          href="https://serpapi.com"
+          title="Google Search API"
+          rel="nofollow noopener noreferrer"
+          >Google Search API</a
+        >. &copy; <span id="year"></span> wheniskeynote.com.
+        <button type="button" onclick="window.theme.toggle()">
+          Toggle appearance</button
+        >.
+      </p>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="/src/pages/index.html" title="Index">Index</a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/lejtzen/vanilla-starter"
+              title="Vanilla Starter at GitHub"
+              rel="noopener"
+            >
+              <icon src="github.svg" width="24" height="24"></icon>
+            </a>
+          </li>
+          <li>
+            <a href="/src/pages/404.html" title="404" rel="nofollow">404</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script type="module" src="~/src/scripts/index.js" defer></script>
+  </body>
+</html>

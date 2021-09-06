@@ -1,9 +1,3 @@
-# wheniskeynote.com
+# wheniskeynote.lejtzendesign.se
 
-Discover when Apple's next keynote / product event is happening!
-
-## Contribute
-
-Help us keep the website up to date.
-
-Add upcoming keynote / product event by updating `js/addNewEvent.js` file and creating a PR.
+A fork of wheniskeynote.com made by Vincent Lejtzén.
