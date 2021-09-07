@@ -1,32 +1,45 @@
-export default class Theme {
+class Theme {
   constructor(node) {
     this.node = node
 
-    console.log(this)
+    this.listenForChange()
+  }
+
+  themes = ['system', 'light', 'dark']
+
+  default = this.themes[0]
+
+  listenForChange() {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    darkModeMediaQuery.addListener((e) => {
+      const darkModeOn = e.matches
+      console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`)
+    })
+  }
+
+  setTheme(color) {
+    const theme = this.themes.includes(color) ? color : this.default
+
+    this.node.classList.remove(...this.themes)
+    this.node.classList.add(theme)
+    window.localStorage.setItem('theme', theme)
+  }
+
+  getTheme() {
+    return window.localStorage.getItem('theme')
   }
 }
 
-;(function (el) {
-  window.theme = {
-    colors: ['light', 'dark'],
+export function setDefaultTheme() {
+  const storedTheme = window.localStorage.getItem('theme')
+  const prefferedTheme = window.matchMedia(
+    '(prefers-color-scheme: dark)',
+  ).macthes
 
-    default: 'dark',
+  document.documentElement.classList.add(
+    storedTheme ? storedTheme : prefferedTheme,
+  )
+}
 
-    set color(color) {
-      var theme = this.colors.indexOf(color) > -1 ? color : this.default
-
-      el.dataset.theme = theme
-      window.localStorage.setItem('theme', theme)
-    },
-
-    get color() {
-      return el.dataset.theme
-    },
-
-    toggle: function () {
-      this.color = this.color === 'dark' ? 'light' : 'dark'
-    },
-  }
-
-  theme.color = window.localStorage.getItem('theme')
-})(document.documentElement)
+export default Theme
