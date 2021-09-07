@@ -17,6 +17,6 @@ Array.from(document.querySelectorAll('[data-component]')).forEach((node) => {
       new Component(node)
     })
   } else {
-    console.warn(`Component ${name} not available`)
+    console.warn(`Component "${name}" not available`)
   }
 })
