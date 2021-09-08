@@ -30,12 +30,14 @@
  * IMPORTANT: The date has to be in the Pacific Standard Time (PST) zone
  *
  */
-const // Format: YYYY (2020)
-  year = 2020,
+const // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
+  timeZone = 'PDT',
+  // Format: YYYY (2020)
+  year = 2021,
   // Format: MM (09) or M (9), both are valid
-  month = 11,
+  month = 09,
   // Format: DD (09) or D (9), both are valid
-  day = 10
+  day = 14
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
 ;(hour = 10),
   // Format: MM (09) or M (9), both are valid
@@ -45,10 +47,10 @@ const // Format: YYYY (2020)
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = 'One more thing'
+const eventName = 'Apple Event'
 
 let start = new Date(
-    month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' GMT-0700',
+    month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone,
   ),
   end = new Date(
     month +
@@ -60,7 +62,8 @@ let start = new Date(
       (hour + 2) +
       ':' +
       minute +
-      ' GMT-0700',
+      ' ' +
+      timeZone,
   ),
   now = new Date(),
   distance = start - now,
