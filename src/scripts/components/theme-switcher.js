@@ -1,20 +1,9 @@
-class Theme {
+export default class ThemeSwitcher {
   constructor(node) {
     this.node = node
 
-    this.listenForChange()
-  }
-
-  themes = ['system', 'light', 'dark']
-
-  default = this.themes[0]
-
-  listenForChange() {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-    darkModeMediaQuery.addListener((e) => {
-      const darkModeOn = e.matches
-      console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`)
+    window.matchMedia(MEDIAQUERY).addListener((e) => {
+      this.setTheme(e.matches ? 'dark' : 'light')
     })
   }
 
@@ -41,5 +30,3 @@ export function setDefaultTheme() {
     storedTheme ? storedTheme : prefferedTheme,
   )
 }
-
-export default Theme

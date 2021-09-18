@@ -1,4 +1,3 @@
-import { setDefaultTheme } from '~/src/scripts/components/theme.js'
-;(() => {
-  setDefaultTheme()
-})()
+import { setDefaultTheme } from '~/src/scripts/services/theme.js'
+
+setDefaultTheme()

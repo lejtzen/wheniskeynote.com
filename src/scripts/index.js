@@ -5,7 +5,7 @@ const components = {
   countdown: import('./components/countdown.js'),
   invite: import('./components/invite.js'),
   stagger: import('./components/stagger.js'),
-  theme: import('./components/theme.js'),
+  'theme-switcher': import('./components/theme-switcher.js'),
 }
 
 Array.from(document.querySelectorAll('[data-component]')).forEach((node) => {
