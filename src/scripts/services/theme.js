@@ -1,76 +1,71 @@
-const THEMES = ['light', 'dark']
-const SELECTEDTHEME = 'dark'
+const THEMES = ['system', 'light', 'dark']
 const MEDIAQUERY = '(prefers-color-scheme: dark)'
 const KEY = 'theme'
+const CALLBACKS = {}
 
-const getTheme = () => {
-  return window.localStorage.getItem(KEY)
+let selectedTheme = 'system'
+
+function callCallbacks(key, data = null) {
+  const callbacks = CALLBACKS[key] || []
+
+  callbacks.forEach((callback) => {
+    callback(data)
+  })
 }
 
-const getSystemTheme = () => {
+function getSystemTheme() {
   const query = window.matchMedia(MEDIAQUERY)
 
   return query.matches ? 'dark' : 'light'
 }
 
-const getResolvedTheme = () => {
-  if (SELECTEDTHEME === 'system') {
+export function getTheme() {
+  return selectedTheme
+}
+
+function getResolvedTheme() {
+  const theme = getTheme()
+
+  if (theme === 'system') {
     return getSystemTheme()
   }
 
-  return SELECTEDTHEME
+  return theme
 }
 
-const setTheme = (theme) => {
-  // Check if themes is valid
-
-  // Store in localstorage
-  try {
-    localStorage.setItem(KEY, theme)
-  } catch (e) {
-    // Unsupported
-  }
-
-  // Resolve theme
-
-  // Set HTML class
-  document.documentElement.classList.remove(...THEMES)
-  document.documentElement.classList.add(theme)
-
-  // Call callbacks
-}
-
-const handleMediaQuery = (event) => {
-  if (SELECTEDTHEME !== 'system') {
+export function setTheme(theme) {
+  if (!THEMES.includes(theme)) {
     return
   }
 
-  setTheme(getSystemTheme())
+  try {
+    window.localStorage.setItem(KEY, theme)
+  } catch (e) {}
+
+  selectedTheme = theme
+  document.documentElement.classList.remove(...THEMES)
+  document.documentElement.classList.add(getResolvedTheme())
+
+  callCallbacks('change', theme)
 }
 
-window.matchMedia(MEDIAQUERY).addListener(handleMediaQuery)
-// window.matchMedia(MEDIAQUERY).removeListener(handleMediaQuery)
+export function onTheme(key, callback) {
+  CALLBACKS[key] = CALLBACKS[key] || []
+  CALLBACKS[key].push(callback)
+}
 
-export const setDefaultTheme = () => {
+export function setDefaultTheme() {
+  let theme = 'system'
+
   try {
-    const d = document.documentElement.classList
-    const storedTheme = localStorage.getItem('theme')
-
-    d.remove('light', 'dark')
-
-    if (storedTheme === 'system') {
-      var t = '(prefers-color-scheme: dark)'
-      var m = window.matchMedia(t)
-
-      if (m.matches) {
-        d.add('dark')
-      } else {
-        d.add('light')
-      }
-    } else if (['light', 'dark'].includes(storedTheme)) {
-      d.add(storedTheme)
-    } else {
-      d.add('dark')
-    }
+    theme = window.localStorage.getItem(KEY)
   } catch (e) {}
+
+  setTheme(theme)
+
+  window.matchMedia(MEDIAQUERY).addListener(({ matches }) => {
+    if (getTheme() === 'system') {
+      setTheme('system')
+    }
+  })
 }
