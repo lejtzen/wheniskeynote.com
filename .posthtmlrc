@@ -5,12 +5,12 @@
       "root": "src"
     },
     "posthtml-extend": {
-      root: "./src/layouts/"
+      "root": "./src/layouts/"
     },
     "posthtml-inline-svg": {
-      cwd: "./src/svg/"
+      "cwd": "./src/svg/"
     },
-     "posthtml-md": {
+    "posthtml-md": {
       "root": "src"
     }
   }

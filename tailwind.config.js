@@ -1,6 +1,5 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.html', './src/**/*.js'],
+  content: ['./src/**/*.html', './src/**/*.js'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -9,9 +8,6 @@ module.exports = {
         padding: '2rem',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

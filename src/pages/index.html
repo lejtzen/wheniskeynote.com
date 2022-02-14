@@ -1,29 +1,13 @@
 <extends src="default.html">
   <block name="meta">
-    <title>When is the next Apple keynote?</title>
-    <meta
-      name="description"
-      content="Discover when Apple&#39;s next keynote / product event is happening!"
-    />
-    <link rel="canonical" href="https://wheniskeynote.lejtzendesign.se" />
-    <meta property="og:title" content="When is the next Apple keynote?" />
-    <meta
-      property="og:description"
-      content="Discover when Apple&#39;s next keynote / product event is happening!"
-    />
-    <meta property="og:url" content="https://wheniskeynote.lejtzendesign.se" />
-    <meta property="og:locale" content="en" />
-    <meta property="og:type" content="website" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="When is the next Apple keynote?" />
-    <meta
-      property="twitter:description"
-      content="Discover when Apple&#39;s next keynote / product event is happening!"
-    />
-    <meta
-      property="twitter:url"
-      content="https://wheniskeynote.lejtzendesign.se"
-    />
+    <!-- prettier-ignore -->
+    <include src="components/seo.html">
+      {
+        "title": "When is the next Apple keynote?",
+        "description": "Discover when Apple's next keynote / product event is happening!",
+        "canonical": ""
+      }
+    </include>
   </block>
 
   <block name="content">

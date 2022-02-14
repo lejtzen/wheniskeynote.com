@@ -3,7 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "description": "Discover when Apple's next keynote / product event is happening!",
-  "source": "./src/pages/index.html",
+  "source": [
+    "src/pages/index.html",
+    "src/pages/404.html"
+  ],
   "scripts": {
     "prebuild": "rm -rf dist",
     "dev": "parcel",
@@ -22,20 +25,20 @@
   },
   "homepage": "https://github.com/lejtzen/wheniskeynote.com#readme",
   "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "autoprefixer": "^10.3.3",
-    "parcel": "latest",
+    "@parcel/transformer-image": "^2.3.1",
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.3.1",
     "parcel-optimizer-friendly-urls": "^0.2.0",
-    "parcel-plugin-md-fm": "^0.3.2",
-    "postcss": "^8.3.6",
+    "parcel-plugin-md-fm": "^0.8.0",
+    "postcss": "^8.4.6",
     "posthtml": "^0.16.5",
-    "posthtml-extend": "^0.6.0",
-    "posthtml-include": "^1.7.1",
+    "posthtml-extend": "^0.6.2",
+    "posthtml-include": "^1.7.2",
     "posthtml-inline-svg": "^0.2.0",
     "posthtml-md": "^1.1.0",
     "posthtml-parser-title": "^0.1.1",
-    "prettier": "2.3.2",
-    "tailwindcss": "^2.2.9"
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
+    "tailwindcss": "^3.0.22"
   }
 }
