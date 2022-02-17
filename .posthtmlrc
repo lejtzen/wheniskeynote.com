@@ -1,17 +1,18 @@
 {
   "plugins": {
     "posthtml-parser-title": {},
-    "posthtml-include": {
-      "root": "src"
-    },
+    "posthtml-expressions": {},
     "posthtml-extend": {
       "root": "./src/layouts/"
     },
-    "posthtml-inline-svg": {
-      "cwd": "./src/svg/"
+    "posthtml-include": {
+      "root": "src"
     },
     "posthtml-md": {
       "root": "src"
+    },
+    "posthtml-inline-svg": {
+      "cwd": "./src/svg/"
     }
   }
 }

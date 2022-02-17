@@ -32,6 +32,7 @@
     "parcel-plugin-md-fm": "^0.8.0",
     "postcss": "^8.4.6",
     "posthtml": "^0.16.5",
+    "posthtml-expressions": "^1.9.0",
     "posthtml-extend": "^0.6.2",
     "posthtml-include": "^1.7.2",
     "posthtml-inline-svg": "^0.2.0",

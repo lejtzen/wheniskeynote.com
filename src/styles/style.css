@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply inline-flex;
+    @apply cursor-pointer;
+    @apply whitespace-nowrap;
+    @apply rounded-full;
+    @apply border-2;
+    @apply border-transparent;
+    @apply py-3;
+    @apply px-6;
+    @apply font-semibold;
+  }
+
+  .text-gradient {
+    @apply bg-blue-600;
+    background: -webkit-linear-gradient(
+      72deg,
+      rgba(206, 15, 61, 1) 5%,
+      rgba(28, 155, 235, 1) 52%,
+      rgba(43, 60, 150, 1) 85%,
+      rgba(107, 22, 167, 1) 100%
+    );
+    background: linear-gradient(
+      72deg,
+      rgba(206, 15, 61, 1) 5%,
+      rgba(28, 155, 235, 1) 52%,
+      rgba(43, 60, 150, 1) 85%,
+      rgba(107, 22, 167, 1) 100%
+    );
+    @apply bg-no-repeat;
+    @apply bg-cover;
+    @apply bg-clip-text;
+    -webkit-text-fill-color: transparent;
+  }
+}

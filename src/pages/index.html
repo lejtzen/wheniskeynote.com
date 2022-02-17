@@ -11,19 +11,33 @@
   </block>
 
   <block name="content">
-    <h1>The next Apple keynote address/product event is</h1>
+    <div class="container">
+      <h1 class="mb-4 font-semibold leading-tight tracking-wide">
+        The next Apple keynote and product event is
+      </h1>
+      <h2
+        class="text-gradient lg:text-10xl text-6xl font-bold leading-none tracking-tight sm:text-8xl"
+      >
+        No event confirmed at this time
+      </h2>
 
-    <include src="components/countdown.html">
-      { "text": "Component text" }
-    </include>
+      <h2 class="mb-8 mt-16 text-xl font-semibold leading-tight tracking-wide">
+        Previous events
+      </h2>
+    </div>
 
-    <include src="components/invite.html">
-      { "text": "Component text" }
-    </include>
-
-    <div md>
+    <div class="container">
       <!-- prettier-ignore -->
-      ## Markdown support
+      <div class="-mx-4 flex items-stretch mb-16">
+        <include src="components/event.html">
+          {
+            "image": "~/src/images/apple-event.jpg",
+            "name": "Apple Event",
+            "description": "Introducing the new MacBook Pro with M1 Pro or M1 Max chip, all-new AirPods, and HomePod mini in five bold colors.",
+            "date": "2021-10-18"
+          }
+        </include>
+      </div>
     </div>
   </block>
 </extends>

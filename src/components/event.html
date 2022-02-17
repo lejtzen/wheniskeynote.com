@@ -1,0 +1,22 @@
+<div data-component="event" class="w-80 flex-none px-4">
+  <article
+    class="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-xl transition-transform hover:scale-105 dark:bg-white/5"
+  >
+    <figure>
+      <if condition="image">
+        <img src="{{ image }}" class="h-auto w-full" />
+      </if>
+    </figure>
+    <div class="flex flex-grow flex-col p-8">
+      <div class="flex-grow">
+        <header>
+          <h3 class="font-semibold">{{ name }}</h3>
+        </header>
+        <p class="my-4 text-sm opacity-80">{{ description }}</p>
+      </div>
+      <footer class="flex items-center justify-between">
+        <time datetime="{{ date }}" class="text-xs opacity-50">{{ date }}</time>
+      </footer>
+    </div>
+  </article>
+</div>
