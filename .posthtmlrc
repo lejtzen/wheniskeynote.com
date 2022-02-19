@@ -1,7 +1,18 @@
 {
   "plugins": {
     "posthtml-parser-title": {},
-    "posthtml-expressions": {},
+    "posthtml-expressions": {
+      "locals": {
+        "events": [
+          {
+            "image": "",
+            "name": "Apple Event",
+            "description": "Introducing the new MacBook Pro with M1 Pro or M1 Max chip, all-new AirPods, and HomePod mini in five bold colors.",
+            "date": "2021-10-18"
+          }
+        ]
+      }
+    },
     "posthtml-extend": {
       "root": "./src/layouts/"
     },

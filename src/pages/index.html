@@ -27,15 +27,10 @@
     </div>
 
     <div class="container">
-      <!-- prettier-ignore -->
-      <div class="-mx-4 flex items-stretch mb-16">
-        <include src="components/event.html">
-          {
-            "name": "Apple Event",
-            "description": "Introducing the new MacBook Pro with M1 Pro or M1 Max chip, all-new AirPods, and HomePod mini in five bold colors.",
-            "date": "2021-10-18"
-          }
-        </include>
+      <div class="-mx-4 mb-16 flex items-stretch">
+        <each loop="event, index in events">
+          <include src="components/event.html" locals="{{ event }}"></include>
+        </each>
       </div>
     </div>
   </block>
