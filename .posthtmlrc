@@ -6,6 +6,12 @@
         "events": [
           {
             "image": "",
+            "name": "Peek Performance",
+            "description": "",
+            "date": "2022-03-08"
+          },
+          {
+            "image": "",
             "name": "Apple Event",
             "description": "Introducing the new MacBook Pro with M1 Pro or M1 Max chip, all-new AirPods, and HomePod mini in five bold colors.",
             "date": "2021-10-18"
