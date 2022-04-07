@@ -31,14 +31,14 @@
  *
  */
 const // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
-  timeZone = 'PDT',
+  timeZone = 'PST',
   // Format: YYYY (2020)
   year = 2022,
   // The month as a number, not the index
   // Format: MM (09) or M (9), both are valid
-  month = 03,
+  month = 06,
   // Format: DD (09) or D (9), both are valid
-  day = 08,
+  day = 06,
   // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
   hour = 10,
   // Format: MM (09) or M (9), both are valid
@@ -48,7 +48,7 @@ const // The time zone when the event will be held. Format: time zone identifier
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = 'Peek Performance'
+const eventName = 'WWDC 2022'
 
 let start = new Date(
     month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone,
