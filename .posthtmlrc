@@ -6,6 +6,12 @@
         "events": [
           {
             "image": "",
+            "name": "WWDC 2022",
+            "description": "",
+            "date": "2022-06-06"
+          },
+          {
+            "image": "",
             "name": "Peek Performance",
             "description": "",
             "date": "2022-03-08"
