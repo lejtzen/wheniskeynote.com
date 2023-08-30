@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/lejtzen/wheniskeynote.com#readme",
   "devDependencies": {
-    "parcel": "^2.0.0-beta.1"
+    "parcel": "^2.9.3"
   }
 }
