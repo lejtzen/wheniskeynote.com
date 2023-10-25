@@ -31,7 +31,7 @@
  *
  */
 // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
-const timeZone = 'PDT'
+const timeZone = 'PST'
 // Format: YYYY (2020)
 const year = '2023'
 // The month as a number, not the index
