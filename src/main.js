@@ -40,7 +40,7 @@ const month = '06'
 // Format: DD (09) or D (9), both are valid
 const day = '10'
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-const hour = '10'
+const hour = '17'
 // Format: MM (09) or M (9), both are valid
 const minute = '00'
 
