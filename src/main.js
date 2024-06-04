@@ -113,7 +113,7 @@ const dayNames = [
     'December',
   ],
   eventHtml =
-    '<div class="gradient"><div class="gradient-inner"><h2><a href="https://www.apple.com/apple-events/" title="Apple Special Events" target="_blank" rel="noopener noreferrer>' +
+    '<div class="gradient"><div class="gradient-inner"><h2><a href="https://www.apple.com/apple-events/" title="Apple Special Events" target="_blank" rel="noopener noreferrer">' +
     stagger(eventName) +
     '</a></h2></div></div><h3>In your time zone, this event will be held on <a id="localtime" href="#" title="Add to calendar">' +
     dayNames[start.getDay()] +
