@@ -36,7 +36,7 @@ const timeZone = 'PDT'
 const year = '2025'
 // The month as a number, not the index
 // Format: MM (09) or M (9), both are valid
-const month = '06'
+const month = '09'
 // Format: DD (09) or D (9), both are valid
 const day = '09'
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
@@ -48,7 +48,7 @@ const minute = '00'
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = "WWDC25";
+const eventName = "Awe dropping";
 
 let start = new Date(
     month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone,
