@@ -31,16 +31,16 @@
  *
  */
 // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
-const timeZone = 'PDT'
+const timeZone = 'EST'
 // Format: YYYY (2020)
-const year = '2025'
+const year = '2026'
 // The month as a number, not the index
 // Format: MM (09) or M (9), both are valid
-const month = '09'
+const month = '03'
 // Format: DD (09) or D (9), both are valid
-const day = '09'
+const day = '04'
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-const hour = '10'
+const hour = '09'
 // Format: MM (09) or M (9), both are valid
 const minute = '00'
 
@@ -48,7 +48,7 @@ const minute = '00'
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = "Awe dropping";
+const eventName = "You're invited."
 
 let start = new Date(
     month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone,
