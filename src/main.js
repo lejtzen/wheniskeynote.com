@@ -38,9 +38,9 @@ const year = '2026'
 // Format: MM (09) or M (9), both are valid
 const month = '10'
 // Format: DD (09) or D (9), both are valid
-const day = '13'
+const day = '28'
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-const hour = 6
+const hour = 10
 // Format: MM (09) or M (9), both are valid
 const minute = '00'
 
@@ -48,7 +48,7 @@ const minute = '00'
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = 'Welcome home.'
+const eventName = 'Pro and Tell'
 
 let start = new Date(
     month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone,
